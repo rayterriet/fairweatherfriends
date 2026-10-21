@@ -87,8 +87,8 @@ const AGENDA = [
    Zonder still toont de site het plaatje dat YouTube zelf kiest.
    --------------------------------------------------------- */
 const VIDEOS = [
-  { id: 'ng-nPEMZwTk', still: 'video-hard-sun.jpg', titel: 'Hard Sun', bij: 'Eddie Vedder, uit Into the Wild', bij_de: 'Eddie Vedder, aus Into the Wild', bij_en: 'Eddie Vedder, from Into the Wild' },
-  { id: 'kN9wM4zA20o', still: 'video-street-spirit.jpg', titel: 'Street Spirit', bij: 'Radiohead, uit The Bends', bij_de: 'Radiohead, aus The Bends', bij_en: 'Radiohead, from The Bends' },
+  { id: 'ng-nPEMZwTk', still: 'video-hard-sun.jpg', titel: 'Hard Sun', bij: 'Eddie Vedder cover by Fairweather Friends' },
+  { id: 'kN9wM4zA20o', still: 'video-street-spirit.jpg', titel: 'Street Spirit', bij: 'Radiohead cover by Fairweather Friends' },
   // Nieuwe video? Kopieer een regel hierboven en vervang het id.
 ];
 
