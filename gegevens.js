@@ -37,7 +37,7 @@ const LEDEN = [
    Overgenomen uit de setlist van 21 juni 2025.
    --------------------------------------------------------- */
 const REPERTOIRE = [
-  { artiest: 'Incubus', titel: 'Drive', lead: 'P', demo: 'drive.mp3' },
+  { artiest: 'Incubus', titel: 'Drive', lead: 'P' },
   { artiest: 'Crosby, Stills, Nash & Young', titel: 'Carry On', lead: 'S' },
   { artiest: 'Gotye', titel: 'Somebody That I Used to Know', lead: 'E+F' },
   { artiest: 'The Beatles', titel: 'Blackbird', lead: 'F' },
@@ -62,7 +62,7 @@ const REPERTOIRE = [
   { artiest: 'Muse', titel: 'Supermassive Black Hole', lead: 'P' },
   { artiest: 'Chris Stapleton', titel: 'Starting Over', lead: 'P' },
   { artiest: 'Justin Timberlake & Chris Stapleton', titel: 'Say Something', lead: 'P' },
-  { artiest: 'Crowded House', titel: 'Weather With You', lead: 'P', demo: 'weather-with-you.mp3' },
+  { artiest: 'Crowded House', titel: 'Weather With You', lead: 'P' },
   { artiest: 'Eddie Vedder', titel: 'Hard Sun', lead: 'P', demo: 'hard-sun.mp3' },
   { artiest: 'Crosby, Stills & Nash', titel: 'Helplessly Hoping', lead: 'S' },
 ];
