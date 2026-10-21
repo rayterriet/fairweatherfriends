@@ -1,0 +1,188 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Fairweather Friends</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Fairweather Friends, akoestische coverband met drie leadstemmen. Pop, rock, blues en alternatief, in Nederland en Duitsland.">
+<meta property="og:title" content="Fairweather Friends">
+<meta property="og:description" content="Akoestisch. Meerstemmig. In een eigen jasje.">
+<meta property="og:image" content="https://fairweatherfriends.nl/img/deelbeeld.jpg">
+<meta property="og:url" content="https://fairweatherfriends.nl/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://fairweatherfriends.nl/">
+<link rel="icon" href="img/monogram.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Oswald:wght@500;600&family=Libre+Franklin:ital,wght@0,400;0,600;1,400&display=swap">
+</head><body>
+<link rel="stylesheet" href="style.css">
+
+<header class="balk">
+  <div class="balk-in">
+    <a class="merk" href="#top" data-ta="aria-label:top" aria-label="Fairweather Friends, naar boven">
+      <img src="img/monogram.png" alt="" width="40" height="40">
+      <span>Fairweather Friends</span>
+    </a>
+    <nav data-ta="aria-label:menu" aria-label="Hoofdmenu">
+      <a href="#over" data-t="nav.over">Over</a>
+      <a href="#band" data-t="nav.band">Band</a>
+      <a href="#repertoire">Repertoire</a>
+      <a href="#agenda" data-t="nav.agenda">Agenda</a>
+      <a href="#fotos" data-t="nav.fotos" id="nav-fotos" hidden>Foto's</a>
+      <a href="#contact" class="nav-boek" data-t="nav.boek">Boeken</a>
+    </nav>
+    <div class="taal" role="group" aria-label="Taal / Sprache / Language">
+      <button type="button" data-lang="nl" aria-label="Nederlands">NL</button>
+      <button type="button" data-lang="de" aria-label="Deutsch">DE</button>
+      <button type="button" data-lang="en" aria-label="English">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-logo">
+        <div class="stralen" aria-hidden="true"></div>
+        <img src="img/logo-1000.webp" srcset="img/logo-560.webp 560w, img/logo-1000.webp 1000w" sizes="(max-width: 760px) 240px, 380px" width="1000" height="2068" alt="Logo van Fairweather Friends: een gitaar met een roos, bloemen, sterren en een lint met de bandnaam">
+      </div>
+      <div class="hero-tekst">
+        <h1 class="sr-only">Fairweather Friends</h1>
+        <p class="tag" data-t="hero.tag">Akoestisch. Meerstemmig. In een eigen jasje.</p>
+        <p class="intro" data-t="hero.intro">Fairweather Friends speelt pop, rock, blues en alternatief, oud en nieuw, bekend en minder bekend. Met gitaren, bas, cajon en drie leadstemmen.</p>
+        <ul class="stijlen" aria-label="Stijlen">
+          <li>Pop</li><li>Rock</li><li>Blues</li><li data-t="stijl.alt">Alternatief</li><li data-t="stijl.ak">Akoestisch</li>
+        </ul>
+        <div class="knoppen">
+          <a class="knop knop-roos" href="#contact" data-t="hero.boek">Boek de band</a>
+          <a class="knop knop-lijn" href="#repertoire" data-t="hero.lijst">Bekijk het repertoire</a>
+        </div>
+        <p class="volgende" id="volgende" hidden></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVER -->
+  <section class="sectie" id="over">
+    <div class="wrap over-grid">
+      <div class="over-tekst">
+        <h2 class="lint" data-t="over.kop">Wat je hoort</h2>
+        <p class="lees" data-t="over.tekst">Fairweather Friends is een coverband met een eigen geluid.</p>
+      </div>
+      <ul class="kenmerken" id="kenmerken"></ul>
+    </div>
+  </section>
+
+  <!-- BAND -->
+  <section class="sectie sectie-diep" id="band">
+    <div class="wrap">
+      <h2 class="lint" data-t="band.kop">De band</h2>
+      <p class="sectie-intro" data-t="band.intro">Vier ervaren muzikanten, drie leadstemmen.</p>
+      <ul class="leden" id="leden"></ul>
+    </div>
+  </section>
+
+  <!-- REPERTOIRE -->
+  <section class="sectie" id="repertoire">
+    <div class="wrap">
+      <h2 class="lint">Repertoire</h2>
+      <div class="rep-kop">
+        <p class="sectie-intro" data-t="rep.intro">Uit onze setlist. Het bolletje laat zien wie de lead zingt.</p>
+        <ul class="legenda" id="legenda"></ul>
+      </div>
+      <ol class="rep" id="rep"></ol>
+      <p class="rep-meer" data-t="rep.meer">En nog veel meer. Een verzoeknummer? Vraag het gerust.</p>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="sectie sectie-diep" id="agenda">
+    <div class="wrap agenda-grid">
+      <div>
+        <h2 class="lint" data-t="agenda.kop">Agenda</h2>
+        <p class="sectie-intro" data-t="agenda.intro">Waar je ons binnenkort live kunt horen.</p>
+      </div>
+      <div class="agenda-lijst">
+        <ol class="gigs" id="gigs"></ol>
+        <div class="leeg" id="gigs-leeg" hidden>
+          <p class="leeg-kop" data-t="agenda.leegkop">Nieuwe data volgen binnenkort</p>
+          <p data-th="agenda.leeg">Wil je ons boeken voor je café, feest of festival? <a href="#contact">Neem contact op</a>.</p>
+        </div>
+        <details class="eerder" id="eerder" hidden>
+          <summary data-t="agenda.eerder">Eerder gespeeld</summary>
+          <ol class="gigs gigs-oud" id="gigs-oud"></ol>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="sectie" id="video">
+    <div class="wrap">
+      <h2 class="lint">Video</h2>
+      <div class="video-grid" id="videos"></div>
+      <div class="leeg leeg-video" id="videos-leeg" hidden>
+        <p class="leeg-kop" data-t="video.binnenkort">Binnenkort</p>
+        <p data-th="video.leeg">Hier komen onze livevideo's te staan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOTO'S -->
+  <section class="sectie sectie-diep" id="fotos" hidden>
+    <div class="wrap">
+      <h2 class="lint" data-t="fotos.kop">Foto's</h2>
+      <div class="foto-grid" id="foto-grid"></div>
+    </div>
+  </section>
+
+  <!-- ORGANISATOREN -->
+  <section class="sectie" id="organisatoren">
+    <div class="wrap riders-grid">
+      <div>
+        <h2 class="lint" data-t="org.kop">Voor organisatoren</h2>
+        <p class="sectie-intro" data-t="org.intro">We nemen onze eigen geluidsinstallatie mee.</p>
+      </div>
+      <ul class="riders" id="riders-lijst"></ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 class="lint lint-donker" data-t="contact.kop">Boeken &amp; contact</h2>
+        <p class="sectie-intro" data-t="contact.intro">Stuur een mail met de datum, de plaats en iets over de zaal of het feest, dan reageren we snel.</p>
+      </div>
+      <div class="contact-kaart">
+        <p class="label" data-t="contact.mail">Mail</p>
+        <div class="mail-rij">
+          <a class="mail" id="mail" href="#"></a>
+          <button class="kopieer" id="kopieer" type="button" data-t="kopieer">Kopieer</button>
+        </div>
+        <p class="label" data-t="contact.volg">Volg ons</p>
+        <ul class="sociaal">
+          <li><a id="fb" href="#" target="_blank" rel="noopener">Facebook <span>Band.FairweatherFriends</span></a></li>
+          <li id="ig-rij" hidden><a id="ig" href="#" target="_blank" rel="noopener">Instagram <span id="ig-naam"></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="voet">
+  <div class="wrap voet-in">
+    <p>Fairweather Friends</p>
+    <p data-t="voet">Akoestische coverband, Nederland en Duitsland</p>
+  </div>
+</footer>
+
+<dialog class="lichtbak" id="lichtbak">
+  <button class="sluit" id="sluit" type="button" data-ta="aria-label:sluit" aria-label="Sluiten">×</button>
+  <img id="lichtbak-img" alt="">
+  <p id="lichtbak-tekst"></p>
+</dialog>
+
+<script src="gegevens.js"></script>
+<script src="site.js"></script>
+</body></html>
