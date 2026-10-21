@@ -13,6 +13,16 @@ Op GitHub: open `gegevens.js`, klik op het potloodje, pas iets aan en klik op **
 - **Foto's:** zet ze in een map `fotos` en noem ze in `FOTOS`. Zolang die lijst leeg is, blijft het fotoblok verborgen.
 - **Riders:** zet de PDF's in een map `riders` en vul de bestandsnaam in.
 
+## Na een wijziging
+
+Bezoekers kunnen een oude versie tot 10 minuten in hun browser bewaren. Wil je dat een wijziging meteen bij iedereen zichtbaar is, verhoog dan in `index.html` het versienummer achter `?v=` (bijvoorbeeld van `20261021c` naar `20261021d`).
+
+## Vindbaarheid
+
+- `index.html` bevat een beschrijving, deelinformatie voor social media en gestructureerde gegevens (MusicGroup) voor Google.
+- Optredens in `AGENDA` worden automatisch als MusicEvent aan Google doorgegeven.
+- `robots.txt` en `sitemap.xml` wijzen zoekmachines de weg.
+
 ## Bestanden
 
 | Bestand | Wat |
@@ -22,6 +32,9 @@ Op GitHub: open `gegevens.js`, klik op het potloodje, pas iets aan en klik op **
 | `site.js` | Opbouw van de pagina en de vaste teksten in NL, DE en EN |
 | `style.css` | Vormgeving |
 | `img/` | Logo, monogram, deelbeeld en video-stills |
+| `demos/` | Fragmenten van 30 seconden voor de repertoirelijst |
+| `fotos/` | Portretten van de bandleden |
+| `robots.txt`, `sitemap.xml` | Voor zoekmachines |
 
 ## Online zetten met GitHub Pages
 

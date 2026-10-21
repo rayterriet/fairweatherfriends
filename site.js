@@ -25,6 +25,7 @@
   var TEKSTEN = {
     nl: {
       'top': 'Fairweather Friends, naar boven',
+      'titel': 'Fairweather Friends | Akoestische coverband met drie leadstemmen',
       'menu': 'Hoofdmenu',
       'nav.over': 'Over', 'nav.band': 'Band', 'nav.agenda': 'Agenda', 'nav.fotos': "Foto's", 'nav.boek': 'Boeken',
       'hero.tag': 'Akoestisch. Meerstemmig. In een eigen jasje.',
@@ -77,6 +78,7 @@
     },
     de: {
       'top': 'Fairweather Friends, nach oben',
+      'titel': 'Fairweather Friends | Akustische Coverband mit drei Leadstimmen',
       'menu': 'Hauptmenü',
       'nav.over': 'Über uns', 'nav.band': 'Band', 'nav.agenda': 'Termine', 'nav.fotos': 'Fotos', 'nav.boek': 'Buchen',
       'hero.tag': 'Akustisch. Mehrstimmig. Ganz im eigenen Stil.',
@@ -129,6 +131,7 @@
     },
     en: {
       'top': 'Fairweather Friends, back to top',
+      'titel': 'Fairweather Friends | Acoustic covers band with three lead voices',
       'menu': 'Main menu',
       'nav.over': 'About', 'nav.band': 'Band', 'nav.agenda': 'Gigs', 'nav.fotos': 'Photos', 'nav.boek': 'Booking',
       'hero.tag': 'Acoustic. In harmony. In our own style.',
@@ -196,6 +199,7 @@
   /* ---------- Vaste teksten ---------- */
   function vasteTeksten() {
     document.documentElement.lang = taal === 'en' ? 'en' : taal;
+    document.title = T('titel');
     document.querySelectorAll('[data-t]').forEach(function (n) { n.textContent = T(n.dataset.t); });
     document.querySelectorAll('[data-th]').forEach(function (n) { n.innerHTML = T(n.dataset.th); });
     document.querySelectorAll('[data-ta]').forEach(function (n) {
@@ -486,6 +490,34 @@
       navigator.clipboard.writeText(B.email).then(function () { klaar('gekopieerd'); }, selecteer);
     } catch (e) { selecteer(); }
   });
+
+  /* ---------- Vindbaarheid: optredens als gestructureerde gegevens voor Google ---------- */
+  (function () {
+    if (!komend.length) return;
+    var events = komend.map(function (g) {
+      return {
+        '@type': 'MusicEvent',
+        'name': 'Fairweather Friends' + (g.zaal ? ' in ' + g.zaal : ''),
+        'startDate': g.datum + (g.tijd ? 'T' + g.tijd : ''),
+        'eventStatus': 'https://schema.org/EventScheduled',
+        'eventAttendanceMode': 'https://schema.org/OfflineEventAttendanceMode',
+        'location': {
+          '@type': 'Place',
+          'name': g.zaal || g.plaats,
+          'address': { '@type': 'PostalAddress', 'addressLocality': g.plaats || '', 'addressCountry': g.land || 'NL' }
+        },
+        'image': 'https://fairweatherfriends.nl/img/deelbeeld.jpg',
+        'description': 'Fairweather Friends speelt pop, rock, blues en alternatief, akoestisch en met drie leadstemmen.',
+        'performer': { '@type': 'MusicGroup', '@id': 'https://fairweatherfriends.nl/#band', 'name': 'Fairweather Friends' },
+        'organizer': { '@type': 'Organization', 'name': g.zaal || 'Fairweather Friends', 'url': g.tickets || 'https://fairweatherfriends.nl/' },
+        'url': g.tickets || 'https://fairweatherfriends.nl/#agenda'
+      };
+    });
+    var sc = document.createElement('script');
+    sc.type = 'application/ld+json';
+    sc.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': events });
+    document.head.appendChild(sc);
+  })();
 
   /* ---------- Alles tekenen, en opnieuw bij taalwissel ---------- */
   function teken() {
