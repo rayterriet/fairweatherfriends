@@ -23,10 +23,10 @@ const BAND = {
    en vul de bestandsnaam in, bijvoorbeeld foto: 'eline.jpg'
    --------------------------------------------------------- */
 const LEDEN = [
-  { naam: 'Pascal Velzenboer', rol: 'Zang, cajon', rol_de: 'Gesang, Cajón', rol_en: 'Vocals, cajón' },
+  { naam: 'Pascal Velzeboer', rol: 'Zang, cajon', rol_de: 'Gesang, Cajón', rol_en: 'Vocals, cajón' },
   { naam: 'Eline van den Berg', rol: 'Zang, gitaar', rol_de: 'Gesang, Gitarre', rol_en: 'Vocals, guitar' },
   { naam: 'Finn Groenestein', rol: 'Zang, bas', rol_de: 'Gesang, Bass', rol_en: 'Vocals, bass' },
-  { naam: 'Raymond ter Riet', rol: 'Akoestische en elektrische gitaar', rol_de: 'Akustik- und E-Gitarre', rol_en: 'Acoustic and electric guitar' },
+  { naam: 'Ray ter Riet', rol: 'Akoestische en elektrische gitaar', rol_de: 'Akustik- und E-Gitarre', rol_en: 'Acoustic and electric guitar' },
 ];
 
 /* ---------------------------------------------------------
