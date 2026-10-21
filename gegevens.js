@@ -26,17 +26,18 @@ const LEDEN = [
   { naam: 'Pascal Velzeboer', rol: 'Zang, cajon', rol_de: 'Gesang, Cajón', rol_en: 'Vocals, cajón' },
   { naam: 'Eline van den Berg', rol: 'Zang, akoestische gitaar', rol_de: 'Gesang, Akustikgitarre', rol_en: 'Vocals, acoustic guitar' },
   { naam: 'Finn Groenestein', rol: 'Zang, bas', rol_de: 'Gesang, Bass', rol_en: 'Vocals, bass' },
-  { naam: 'Ray ter Riet', rol: 'Akoestische en elektrische gitaar', rol_de: 'Akustik- und E-Gitarre', rol_en: 'Acoustic and electric guitar' },
+  { naam: 'Ray ter Riet', foto: 'ray.jpg', rol: 'Akoestische en elektrische gitaar', rol_de: 'Akustik- und E-Gitarre', rol_en: 'Acoustic and electric guitar' },
 ];
 
 /* ---------------------------------------------------------
    REPERTOIRE
    lead: wie zingt de lead? 'P' = Pascal, 'E' = Eline, 'F' = Finn,
    'S' = samen. Twee stemmen kan ook: 'E+F'. Leeg laten mag.
+   demo (mag je weglaten): fragment van ca. 30 sec. in de map "demos".
    Overgenomen uit de setlist van 21 juni 2025.
    --------------------------------------------------------- */
 const REPERTOIRE = [
-  { artiest: 'Incubus', titel: 'Drive', lead: 'P' },
+  { artiest: 'Incubus', titel: 'Drive', lead: 'P', demo: 'drive.mp3' },
   { artiest: 'Crosby, Stills, Nash & Young', titel: 'Carry On', lead: 'S' },
   { artiest: 'Gotye', titel: 'Somebody That I Used to Know', lead: 'E+F' },
   { artiest: 'The Beatles', titel: 'Blackbird', lead: 'F' },
@@ -46,23 +47,23 @@ const REPERTOIRE = [
   { artiest: 'Oasis', titel: "Don't Look Back in Anger", lead: 'P' },
   { artiest: 'Foo Fighters', titel: 'Learn to Fly', lead: 'P' },
   { artiest: 'Khruangbin', titel: 'Texas Sun', lead: 'F' },
-  { artiest: 'Gretchen Peters', titel: "The Aviator's Song", lead: 'E' },
+  { artiest: 'Gretchen Peters', titel: "The Aviator's Song", lead: 'E', demo: 'the-aviators-song.mp3' },
   { artiest: 'Maroon 5', titel: 'Sunday Morning', lead: 'F' },
   { artiest: 'Chris Stapleton', titel: 'Tennessee Whiskey', lead: 'P' },
   { artiest: 'David Gray', titel: 'Babylon', lead: 'P' },
-  { artiest: 'Radiohead', titel: 'Street Spirit', lead: 'F' },
+  { artiest: 'Radiohead', titel: 'Street Spirit', lead: 'F', demo: 'street-spirit.mp3' },
   { artiest: 'Queens of the Stone Age', titel: 'Make It Wit Chu', lead: 'P' },
   { artiest: 'Crowded House', titel: "Don't Dream It's Over", lead: '' },
   { artiest: 'Eddie Vedder', titel: 'Society', lead: 'P' },
   { artiest: 'Neil Young', titel: 'Old Man', lead: 'P' },
-  { artiest: 'Eagles', titel: 'Seven Bridges Road', lead: 'S' },
+  { artiest: 'Eagles', titel: 'Seven Bridges Road', lead: 'S', demo: 'seven-bridges-road.mp3' },
   { artiest: 'Elbow', titel: 'One Day Like This', lead: 'F' },
-  { artiest: 'Oasis', titel: 'Live Forever', lead: 'E' },
+  { artiest: 'Oasis', titel: 'Live Forever', lead: 'E', demo: 'live-forever.mp3' },
   { artiest: 'Muse', titel: 'Supermassive Black Hole', lead: 'P' },
   { artiest: 'Chris Stapleton', titel: 'Starting Over', lead: 'P' },
   { artiest: 'Justin Timberlake & Chris Stapleton', titel: 'Say Something', lead: 'P' },
-  { artiest: 'Crowded House', titel: 'Weather With You', lead: 'P' },
-  { artiest: 'Eddie Vedder', titel: 'Hard Sun', lead: 'P' },
+  { artiest: 'Crowded House', titel: 'Weather With You', lead: 'P', demo: 'weather-with-you.mp3' },
+  { artiest: 'Eddie Vedder', titel: 'Hard Sun', lead: 'P', demo: 'hard-sun.mp3' },
   { artiest: 'Crosby, Stills & Nash', titel: 'Helplessly Hoping', lead: 'S' },
 ];
 

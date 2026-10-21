@@ -43,7 +43,8 @@
       ],
       'band.kop': 'De band',
       'band.intro': 'Vier ervaren muzikanten, drie leadstemmen.',
-      'rep.intro': 'Uit onze setlist. Het bolletje laat zien wie de lead zingt.',
+      'rep.intro': 'Uit onze setlist. Het bolletje laat zien wie de lead zingt. Bij een nummer met een afspeelknop hoor je een fragment van ons.',
+      'rep.speel': 'Luister naar een fragment van ',
       'rep.samen': 'Samen',
       'rep.meer': 'En nog veel meer. Een verzoeknummer? Vraag het gerust.',
       'rep.lead': 'Lead: ',
@@ -94,7 +95,8 @@
       ],
       'band.kop': 'Die Band',
       'band.intro': 'Vier erfahrene Musiker, drei Leadstimmen.',
-      'rep.intro': 'Aus unserer Setlist. Der Punkt zeigt, wer den Lead singt.',
+      'rep.intro': 'Aus unserer Setlist. Der Punkt zeigt, wer den Lead singt. Bei Songs mit Play-Knopf könnt ihr in unsere Version reinhören.',
+      'rep.speel': 'Hört rein: ',
       'rep.samen': 'Zusammen',
       'rep.meer': 'Und vieles mehr. Ein Musikwunsch? Fragt einfach.',
       'rep.lead': 'Lead: ',
@@ -145,7 +147,8 @@
       ],
       'band.kop': 'The band',
       'band.intro': 'Four experienced musicians, three lead voices.',
-      'rep.intro': 'From our setlist. The dot shows who sings lead.',
+      'rep.intro': 'From our setlist. The dot shows who sings lead. Songs with a play button have a short clip of our version.',
+      'rep.speel': 'Play a clip of ',
       'rep.samen': 'Together',
       'rep.meer': 'And plenty more. Got a request? Just ask.',
       'rep.lead': 'Lead: ',
@@ -260,9 +263,58 @@
         li.appendChild(stem);
       }
       li.appendChild(el('span', 'nummer-artiest', n.artiest || ''));
+      if (n.demo) {
+        var knop = el('button', 'fragment');
+        knop.type = 'button';
+        knop.dataset.demo = 'demos/' + n.demo;
+        knop.setAttribute('aria-pressed', 'false');
+        knop.setAttribute('aria-label', T('rep.speel') + n.titel);
+        knop.title = T('rep.speel') + n.titel;
+        var ring = el('span', 'fragment-ring');
+        ring.setAttribute('aria-hidden', 'true');
+        knop.appendChild(ring);
+        var ikoon = el('span', 'fragment-ikoon');
+        ikoon.setAttribute('aria-hidden', 'true');
+        knop.appendChild(ikoon);
+        knop.addEventListener('click', function () { speel(knop); });
+        li.appendChild(knop);
+        li.classList.add('met-fragment');
+      }
       $('rep').appendChild(li);
     });
   }
+
+  /* ---------- Fragmenten: één speler voor de hele lijst ---------- */
+  var speler = new Audio();
+  speler.preload = 'none';
+  var actief = null;
+  function zetStand(knop, aan) {
+    if (!knop) return;
+    knop.setAttribute('aria-pressed', String(aan));
+    knop.classList.toggle('speelt', aan);
+    if (!aan) knop.style.setProperty('--voortgang', '0');
+  }
+  function stopFragment() {
+    speler.pause();
+    zetStand(actief, false);
+    actief = null;
+  }
+  function speel(knop) {
+    if (actief === knop && !speler.paused) { stopFragment(); return; }
+    if (actief !== knop) {
+      zetStand(actief, false);
+      actief = knop;
+      speler.src = knop.dataset.demo;
+    }
+    zetStand(knop, true);
+    var p = speler.play();
+    if (p && p.catch) p.catch(function () { zetStand(knop, false); actief = null; });
+  }
+  speler.addEventListener('timeupdate', function () {
+    if (actief && speler.duration) actief.style.setProperty('--voortgang', String(speler.currentTime / speler.duration));
+  });
+  speler.addEventListener('ended', stopFragment);
+  speler.addEventListener('error', function () { zetStand(actief, false); actief = null; });
 
   /* ---------- Agenda ---------- */
   function datum(s) { var p = String(s).split('-').map(Number); return new Date(p[0], p[1] - 1, p[2]); }
@@ -437,6 +489,7 @@
 
   /* ---------- Alles tekenen, en opnieuw bij taalwissel ---------- */
   function teken() {
+    stopFragment();
     vasteTeksten(); kenmerken(); band(); repertoire(); agenda(); video(); fotos(); riders();
   }
   document.querySelectorAll('[data-lang]').forEach(function (b) {
