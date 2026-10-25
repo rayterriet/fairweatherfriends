@@ -24,8 +24,8 @@ const BAND = {
    --------------------------------------------------------- */
 const LEDEN = [
   { naam: 'Pascal Velzeboer', foto: 'pascal.jpg', rol: 'Zang, cajon', rol_de: 'Gesang, Cajón', rol_en: 'Vocals, cajón' },
-  { naam: 'Eline van den Berg', rol: 'Zang, akoestische gitaar', rol_de: 'Gesang, Akustikgitarre', rol_en: 'Vocals, acoustic guitar' },
-  { naam: 'Finn Groenestein', rol: 'Zang, bas', rol_de: 'Gesang, Bass', rol_en: 'Vocals, bass' },
+  { naam: 'Eline van den Berg', foto: 'eline.jpg', rol: 'Zang, akoestische gitaar', rol_de: 'Gesang, Akustikgitarre', rol_en: 'Vocals, acoustic guitar' },
+  { naam: 'Finn Groenestein', foto: 'finn.jpg', rol: 'Zang, bas', rol_de: 'Gesang, Bass', rol_en: 'Vocals, bass' },
   { naam: 'Ray ter Riet', foto: 'ray.jpg', rol: 'Akoestische en elektrische gitaar', rol_de: 'Akustik- und E-Gitarre', rol_en: 'Acoustic and electric guitar' },
 ];
 
