@@ -492,13 +492,21 @@
   });
 
   /* ---------- Vindbaarheid: optredens als gestructureerde gegevens voor Google ---------- */
+  // Zomer- of wintertijd in Nederland/Duitsland op die datum: +02:00 of +01:00
+  function tijdzone(datum) {
+    try {
+      var uur = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Amsterdam', hour: '2-digit', hourCycle: 'h23' })
+        .format(new Date(datum + 'T12:00:00Z'));
+      return uur === '14' ? '+02:00' : '+01:00';
+    } catch (e) { return '+01:00'; }
+  }
   (function () {
     if (!komend.length) return;
     var events = komend.map(function (g) {
       return {
         '@type': 'MusicEvent',
         'name': 'Fairweather Friends' + (g.zaal ? ' in ' + g.zaal : ''),
-        'startDate': g.datum + (g.tijd ? 'T' + g.tijd : ''),
+        'startDate': g.datum + (g.tijd ? 'T' + g.tijd + ':00' + tijdzone(g.datum) : ''),
         'eventStatus': 'https://schema.org/EventScheduled',
         'eventAttendanceMode': 'https://schema.org/OfflineEventAttendanceMode',
         'location': {
