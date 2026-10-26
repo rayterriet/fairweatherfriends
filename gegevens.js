@@ -75,7 +75,7 @@ const REPERTOIRE = [
    tickets (mag je weglaten): link naar de kaartverkoop
    --------------------------------------------------------- */
 const AGENDA = [
-  { datum: '2027-04-17', tijd: '20:00', zaal: 'Laut & Lauter', plaats: 'Goch-Hommersum', land: 'DE' },
+  { datum: '2027-04-17', tijd: '20:00', zaal: 'Laut & Lauter', plaats: 'Goch-Hommersum', land: 'DE', status: 'gratis' },
   // Nieuw optreden? Haal de // weg en pas de regel aan, bijvoorbeeld:
   // { datum: '2026-12-12', tijd: '21:00', zaal: 'Naam zaal', plaats: 'Stad', status: 'gratis' },
   // { datum: '2027-03-06', zaal: 'Naam Kneipe', plaats: 'Rees', land: 'DE' },

@@ -518,7 +518,8 @@
         'description': 'Fairweather Friends speelt pop, rock, blues en alternatief, akoestisch en met drie leadstemmen.',
         'performer': { '@type': 'MusicGroup', '@id': 'https://fairweatherfriends.nl/#band', 'name': 'Fairweather Friends' },
         'organizer': { '@type': 'Organization', 'name': g.zaal || 'Fairweather Friends', 'url': g.tickets || 'https://fairweatherfriends.nl/' },
-        'url': g.tickets || 'https://fairweatherfriends.nl/#agenda'
+        'url': g.tickets || 'https://fairweatherfriends.nl/#agenda',
+        'isAccessibleForFree': g.status === 'gratis'
       };
     });
     var sc = document.createElement('script');
